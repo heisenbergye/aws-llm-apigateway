@@ -1,0 +1,39 @@
+version: '3'
+services:
+  litellm:
+    container_name: litellm
+    image: ghcr.io/berriai/litellm:main-latest
+    environment:
+      - DATABASE_URL=postgresql://root:123456abcd@postgres:5432/litellm
+      - AWS_ACCESS_KEY_ID=<AK>
+      - AWS_SECRET_ACCESS_KEY=<SK>
+    command: [ "--config", "/app/config.yaml", "--port", "4000" ]
+    ports:
+      - 4000:4000
+    volumes:
+      - ./litellm_config.yaml:/app/config.yaml
+    links:
+      - postgres
+      - redis
+    depends_on:
+      - postgres
+      - redis
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123456abcd
+      - POSTGRES_DB=litellm
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  redis:
+    container_name: redis
+    image: redis:latest
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis:/data
