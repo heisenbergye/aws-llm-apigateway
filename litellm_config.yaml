@@ -9,7 +9,11 @@ model_list:
       model: sagemaker/mistral7b-2024-04-23-10-33-56-031
       aws_region_name: "us-west-2"
       tpm: 1024
-
+  - model_name: cohere
+    litellm_params:
+      model: bedrock/cohere.embed-english-v3
+      aws_region_name: "us-west-2"
+      
 litellm_settings:
   set_verbose: True
 
