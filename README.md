@@ -30,3 +30,29 @@ cd aws-llm-apigateway/
 ```
 docker-compose up -d
 ```
+
+chat
+```
+curl --location 'http://0.0.0.0:4000/chat/completions' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer sk-1234' \
+--data ' {
+"model": "claude3-sonnet",
+"temperature": 0.1,
+"max_tokens": 1000,
+"messages": [
+{
+"role": "user",
+"content": "Tell me something about large language models."
+}
+]
+}'
+```
+
+embedding
+```
+curl --location 'http://0.0.0.0:4000/embeddings' \
+--header 'Authorization: Bearer sk-1234' \
+--header 'Content-Type: application/json' \
+--data '{"input": ["Academia.edu uses"], "model": "cohere", "encoding_format": "base64"}'
+```
