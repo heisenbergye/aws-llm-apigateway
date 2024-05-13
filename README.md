@@ -56,7 +56,7 @@ curl --location 'http://0.0.0.0:4000/embeddings' \
 --header 'Authorization: Bearer sk-1234' \
 --data ' {
  "model": "cohere",
- "input": ["The Tesla Model Y is currently available in China with the following pricing: Tesla Model Y Long Range AWD: Starting price of 347,900 yuan ($52,600 USD); Tesla Model Y Performance AWD: Starting price of 387,900 yuan ($58,600 USD).These prices are before any applicable incentives or fees in China. The Model Y went into production at Tesla Shanghai Gigafactory in early 2021 for the Chinese market.Tesla has been adjusting prices periodically in China based on factors like supply chain costs and import duties. The Model Y has seen strong demand in China since its launch there. Prices may vary slightly by region within China as well."]
+ "input": ["Tesla Model Y Long Range AWD: Starting price of 347,900 yuan ($52,600 USD)", "Tesla Model Y Performance AWD: Starting price of 387,900 yuan ($58,600 USD)"]}'
  }
 '
 ```
