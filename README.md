@@ -56,7 +56,6 @@ curl --location 'http://0.0.0.0:4000/embeddings' \
 --header 'Authorization: Bearer sk-1234' \
 --data ' {
  "model": "cohere",
- "input": ["Tesla Model Y Long Range AWD: Starting price of 347,900 yuan ($52,600 USD)", "Tesla Model Y Performance AWD: Starting price of 387,900 yuan ($58,600 USD)"]}'
- }
-'
+ "input": ["Tesla Model Y Long Range AWD: Starting price of 347,900 yuan ($52,600 USD)", "Tesla Model Y Performance AWD: Starting price of 387,900 yuan ($58,600 USD)"]
+}'
 ```
