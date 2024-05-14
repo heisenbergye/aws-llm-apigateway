@@ -7,6 +7,7 @@ services:
       - DATABASE_URL=postgresql://root:123456abcd@postgres:5432/litellm
       - AWS_ACCESS_KEY_ID=<AK>
       - AWS_SECRET_ACCESS_KEY=<SK>
+    command: [ "--config", "/app/config.yaml", "--port", "4000" ]
     ports:
       - 4000:4000
     volumes:
