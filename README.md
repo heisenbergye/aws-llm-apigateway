@@ -3,10 +3,11 @@ Call all LLM on AWS using the OpenAI format API
 
 在AWS美西2区域
 
-1. Bedrock 开启 claude 的访问权限  https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html
-2. Sagemaker 部署Mistral 7B模型 https://github.com/heisenbergye/aws-llm-apigateway/blob/main/vllm_mistral_7B_deploy_V9.ipynb
-3. 准备 AKSK 赋予 Bedrock-runtime 和 Sagemaker-runtime的访问权限
-4. 在 Sagemaker Notebook下载demo 的 repo
+1. [Bedrock 模型ID](https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html)
+2. [Bedrock 开启 cluade sonnet 的访问权限](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html)
+3. [Sagemaker 部署 Mistral 7B 模型](https://github.com/heisenbergye/aws-llm-apigateway/blob/main/vllm_mistral_7B_deploy_V9.ipynb)
+4. 准备 AKSK 赋予 Bedrock-runtime 和 Sagemaker-runtime的访问权限
+5. 在 Sagemaker Notebook下载demo 的 repo
 
 ```
 git clone https://github.com/heisenbergye/aws-llm-apigateway.git
