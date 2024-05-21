@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: litellm-config
+  namespace: litellm
+data:
+  config.yaml: |
+      model_list:
+        - model_name: claude3-sonnet
+          litellm_params:
+            model: bedrock/anthropic.claude-3-sonnet-20240229-v1:0
+            aws_region_name: "us-west-2"
+            #rpm: 2
+
+        - model_name: cohere
+          litellm_params:
+            model: bedrock/cohere.embed-multilingual-v3
+            aws_region_name: "us-west-2"
+            
+        - model_name: mistral7b
+          litellm_params:
+            model: sagemaker/mistral7b-2024-05-13-06-55-30-611
+            aws_region_name: "us-west-2"
+            #tpm: 1000
+
+      litellm_settings:
+        set_verbose: True
+        num_retries: 3
+        request_timeout: 10
+
+      general_settings: 
+        master_key: sk-1234
+        database_url: postgresql://root:123456abcd@postgres:5432/litellm
+        database_connection_pool_limit: 100
+        database_connection_timeout: 60
+        proxy_batch_write_at: 5
+
+      router_settings:
+        routing_strategy: usage-based-routing-v2
+        num_retries: 2
+        timeout: 30
+        redis_host: redis
+        redis_port: 6379
