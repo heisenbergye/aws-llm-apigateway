@@ -60,3 +60,16 @@ curl --location 'http://0.0.0.0:4000/embeddings' \
  "input": ["Tesla Model Y Long Range AWD: Starting price of 347,900 yuan ($52,600 USD)", "Tesla Model Y Performance AWD: Starting price of 387,900 yuan ($58,600 USD)"]
 }'
 ```
+
+性能测试
+```
+pip install aiohttp tqdm
+
+#  --url    ：访问地址
+#  --model  ：指定模型别名
+#  --token  ：创建的访问token
+#  -c  ：并行数量
+#  -n  ：请求数量
+python load-test.py --url http://aws-llm-gw-xxx.xxxx.elb.amazonaws.com/chat/completions --model claude3-sonnet --token sk-1234  -c 2 -n 10
+```
+
